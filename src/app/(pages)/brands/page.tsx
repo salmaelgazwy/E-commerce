@@ -1,4 +1,4 @@
-
+export const dynamic = "force-dynamic";
 import BrandClient from "@/components/brands/BrandClient";
 import { Getallbrands } from "@/services/brands.services";
 
