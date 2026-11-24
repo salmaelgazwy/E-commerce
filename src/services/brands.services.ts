@@ -1,6 +1,7 @@
 "use server";
 
 const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
+console.log("BASE URL:", process.env.NEXT_PUBLIC_BASE_URL);
 
 export async function Getallbrands() {
   

@@ -1,8 +1,7 @@
 "use client"
 
 import {
-  Addproducttowishlist,
-  Removeproductfromwishlist,} from "@/actions/wishlist.actions";
+  Addproducttowishlist,Removeproductfromwishlist,} from "@/actions/wishlist.actions";
 
 import { Button } from "@/components/ui/button"
 import { wishlistcontext } from "@/context/Wishlistcontext";

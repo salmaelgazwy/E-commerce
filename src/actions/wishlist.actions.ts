@@ -6,6 +6,11 @@ const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
 export async function Addproducttowishlist(productId:string) 
 {
     const token=await getOurtoken();
+     if (!token) {
+    return { status: "fail", message: "Please sign in first" };
+  }
+
+
     const response=await fetch(`${baseurl}/api/v1/wishlist`,{
         method:"POST",
         headers:{
@@ -47,7 +52,7 @@ export async function Getloggeduserwishlist() {
   if (!token) 
 {
     return { status: "fail", message: "Please sign in first", data: [] };
- }
+  }
 
   const response = await fetch(`${baseurl}/api/v1/wishlist`, {
     method: "GET",

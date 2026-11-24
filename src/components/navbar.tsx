@@ -47,17 +47,17 @@ const { noofcarditems } = cartcontext!;
           
         <>
           {session.status==="loading"?<Spinner />:session.status==="authenticated"?<>
-            <Button variant="ghost" size="icon" className="hover:text-primary relative">
-              <Link href="/wishlist">
-            {count>0&&(
-               <div className="absolute text-xs text-white bg-red-600 rounded-full flex justify-center items-center w-4 h-4 top-0 right-0">
-    {count}
-  </div>
-            )}
-               <Heart  />
-              </Link>
- 
-          </Button>
+           <Button variant="ghost" size="icon" className="hover:text-primary">
+  <Link href="/wishlist" className="relative">
+    <Heart />
+
+    {count > 0 && (
+      <Badge className="absolute -top-2 -right-2 w-4 h-4 p-0 text-xs flex justify-center items-center bg-red-600 text-white">
+        {count}
+      </Badge>
+    )}
+  </Link>
+</Button>
           <Button variant="ghost" size="icon" className="hover:text-primary">
             <Link href="/cart">
             <div className="relative">

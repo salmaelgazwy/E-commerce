@@ -8,7 +8,7 @@ export async function getOurtoken()
    const token = (await cookies()).get("next-auth.session-token")?.value;
   if(!token)
   {
-   throw new Error("Please log in to add products to your cart.")
+   return null
   }
   
   
