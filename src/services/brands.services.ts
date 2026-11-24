@@ -1,9 +1,9 @@
 "use server";
 
-const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
-console.log("BASE URL:", process.env.NEXT_PUBLIC_BASE_URL);
+
 
 export async function Getallbrands() {
+  const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
   
   const response = await fetch(`${baseurl}/api/v1/brands`);
 
@@ -15,6 +15,7 @@ export async function Getallbrands() {
 
 export async function Getspecificbrand(brandid:string) 
 {
+  const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
   
   const response = await fetch(`${baseurl}/api/v1/brands/${brandid}`);
 
