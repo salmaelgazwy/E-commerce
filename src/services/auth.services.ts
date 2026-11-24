@@ -2,9 +2,10 @@
 import { ForgotPasswordSchemaType, LoginSchemaType, RegisterSchemaType, resetcodeSchemaType } from "@/lib/Schemas/auth.schema";
 import { json } from "zod";
 
-const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
+
 
 export async function SignupUser(formData: RegisterSchemaType) {
+  const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
   const { repassword, ...userData } = formData;
 
   const response = await fetch(`${baseurl}/api/v1/auth/signup`, {
@@ -23,6 +24,7 @@ export async function SignupUser(formData: RegisterSchemaType) {
   return data;
 }
 export async function SigninUser(formData: LoginSchemaType) {
+  const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
 
   const response = await fetch(`${baseurl}/api/v1/auth/signin`, {
     method: "POST",
@@ -39,6 +41,7 @@ export async function SigninUser(formData: LoginSchemaType) {
 
 export async function ForgotPassword(formData:ForgotPasswordSchemaType) 
 {
+  const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
   const response=await fetch(`${baseurl}/api/v1/auth/forgotPasswords`,{
     method:"POST",
     body:JSON.stringify(formData),
@@ -53,6 +56,7 @@ export async function ForgotPassword(formData:ForgotPasswordSchemaType)
 }
 export async function VerifyResetCode(formData:resetcodeSchemaType) 
 {
+  const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
  const response= await fetch(`${baseurl}/api/v1/auth/verifyResetCode`,{
   method:"POST",
   body:JSON.stringify(formData),

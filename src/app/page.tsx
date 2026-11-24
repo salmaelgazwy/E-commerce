@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Footer from "@/components/Footer/Footer";
 import Swipperimaepage from "@/components/Home/Swipperimage";
 import ShopByCategoryGrid from "./(pages)/categories/page";

@@ -1,24 +1,24 @@
+
 "use server";
 
 import { CategoryI } from "@/types/category.type";
 
-const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export async function GetAllCategories() {
-  const response = await fetch(
-    `${baseurl}/api/v1/categories`
-  );
+  const baseurl = process.env.NEXT_PUBLIC_BASE_URL || "https://your-api-domain.com";
+  const response = await fetch(`${baseurl}/api/v1/categories`, {
+    cache: "no-store",
+  });
 
   const data = await response.json();
-
   return data;
 }
 
-export async function Getspecificcategory(catid:string) 
-{
-const response = await fetch(`${baseurl}/api/v1/categories/${catid}`);
+export async function Getspecificcategory(catid: string) {
+  const baseurl = process.env.NEXT_PUBLIC_BASE_URL || "https://your-api-domain.com";
+  const response = await fetch(`${baseurl}/api/v1/categories/${catid}`, {
+    cache: "no-store",
+  });
 
-const data = await response.json();
-
-return data;
+  const data = await response.json();
+  return data;
 }
