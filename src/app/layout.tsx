@@ -9,7 +9,7 @@ import CartcontextProvider from "@/context/Cartcontext";
 import { Provider } from 'react-redux'
 import { store } from "@/redux/store";
 import Providercomponent from "@/components/providercomponent/Provider-component";
-import WishlistcontextProvider from "@/context/Wishlistcontext";
+
 
 const ibmPlexSansHeading = IBM_Plex_Sans({subsets:['latin'],variable:'--font-heading'});
 
@@ -37,11 +37,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", roboto.variable, ibmPlexSansHeading.variable)}
     >
       <body>
-         <WishlistcontextProvider>
+     
         <Providercomponent>
           {children}
         </Providercomponent>
-        </WishlistcontextProvider>
+   
   
 
       </body>

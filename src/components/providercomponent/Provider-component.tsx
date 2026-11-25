@@ -6,12 +6,14 @@ import { Provider } from 'react-redux'
 import Navbar from '../navbar'
 import { Toaster } from 'sonner'
 import { store } from '@/redux/store'
+import WishlistcontextProvider from '@/context/Wishlistcontext'
 
 export default function Providercomponent({children}:{children:React.ReactNode}) 
 {
   return (
     <>
        <AuthContextProvider>
+            <WishlistcontextProvider>
           <CartcontextProvider>
 <Provider store={store}>
     <Navbar/>
@@ -19,6 +21,7 @@ export default function Providercomponent({children}:{children:React.ReactNode})
         {children }
         </Provider>
         </CartcontextProvider>
+        </WishlistcontextProvider>
         </AuthContextProvider>
         
     </>
